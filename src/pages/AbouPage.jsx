@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const AbouPage = () => {
-  return (
-    <div>AbouPage</div>
-  )
-}
-export default AbouPage
+    const navigrate = useNavigate();
+    return (
+        <div>
+            AbouPage
+            <button onClick={() => navigrate(-1)}>Назад</button>
+        </div>
+    );
+};
+export default AbouPage;
