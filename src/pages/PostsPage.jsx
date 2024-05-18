@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
+import { getPosts } from "../api";
 
 import { Link } from "react-router-dom";
 
@@ -8,9 +9,7 @@ const PostsPage = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await axios.get(
-                "https://jsonplaceholder.typicode.com/posts?_limit=10"
-            );
+            const response = await getPosts();
             console.log(response.data); // response.data
             setPosts(response.data);
         };
